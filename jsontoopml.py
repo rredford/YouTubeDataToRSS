@@ -30,7 +30,7 @@ ochannelID = ""
 
 # open file with handling
 try:
-  inf = open(infil, "r")
+  inf = open(infil, "r", encoding="utf8")
 except ValueError:
   print("Input file error: " & ValueError)
 
@@ -42,7 +42,7 @@ if path.exists(outfil):
     exit(outfil + " file exists.")
 
 try:
-  outf = open(outfil, "w")
+  outf = open(outfil, "w", encoding="utf8")
 except ValueError:
   inf.close() # since already opened
   print("Output file error: " & ValueError)
