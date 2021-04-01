@@ -12,6 +12,7 @@
 import sys
 import os.path
 from os import path
+from html import escape
 
 if not len(sys.argv) == 3:
   exit("Need jsontoopml.py <input file> <output file>\n")
@@ -69,7 +70,7 @@ for x in inf:
   elif "\"title\"" in infile:
     # if matched, its last info needed, write out.
     work = infile.split("\"")
-    otitle = work[3];
+    otitle = escape(work[3]) # Escape XML special characters
     outf.write("    <outline\n")
     outf.write("      title=\"" + otitle + "\"\n")
     outf.write("      text=\"" + otitle + "\"\n")
