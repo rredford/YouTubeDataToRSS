@@ -12,7 +12,7 @@
 import sys
 import os.path
 from os import path
-from html import escape
+from xml.sax.saxutils import escape
 
 if not len(sys.argv) == 3:
   exit("Need jsontoopml.py <input file> <output file>\n")
@@ -87,6 +87,7 @@ outf.write("</opml>\n")
 # close files
 inf.close()
 outf.close()
+
 
 
 

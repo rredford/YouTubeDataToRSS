@@ -12,6 +12,7 @@
 import sys
 import os.path
 from os import path
+from xml.sax.saxutils import escape
 
 if not len(sys.argv) == 3:
   exit("Need csvtoopml.py <input file> <output file>\n");
@@ -30,7 +31,7 @@ ochannelID = ""
 
 # open file with handling
 try:
-  inf = open(infil, "r")
+  inf = open(infil, "r", encoding="utf8")
 except ValueError:
   print("Input file error: " & ValueError)
 
@@ -42,7 +43,7 @@ if path.exists(outfil):
     exit(outfil + " file exists.")
 
 try:
-  outf = open(outfil, "w")
+  outf = open(outfil, "w", encoding="utf8")
 except ValueError:
   inf.close() # since already opened
   print("Output file error: " & ValueError)
@@ -63,7 +64,7 @@ for x in inf:
     work = infile.split(",") # always at array #3.
     if len(work) == 3:
       ochannelID = work[0];     # file might have errors but not likely.
-      otitle = work[2];
+      otitle = escape(work[2])  # Escape XML special characters
       outf.write("    <outline\n")
       outf.write("      title=\"" + otitle + "\"\n")
       outf.write("      text=\"" + otitle + "\"\n")
