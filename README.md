@@ -1,11 +1,15 @@
 # YouTubeDataToRSS
 Converts youtube subscription data from "your data" into opml for import into rss feed program or website.\
-\
+There is two file format possiblities - JSON and CSV.\
+There is scripts for both file formats.\
 This script needs python.\
 \
 How to use: \
-python jsontoopml.py (input json file) (output opml file)
-
+python jsontoopml.py (input json file) (output opml file)\
+or\
+python csvtoopml.py (input csv file) (output opml file)\
+\
+\
 How to get JSON file with only all youtube subscriptions:\
 1: be at youtube homepage, logged in.\
 2: click your account icon at top right.\
