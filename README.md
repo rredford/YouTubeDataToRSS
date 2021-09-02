@@ -12,8 +12,7 @@ python csvtoopml.py (input csv file) (output opml file)\
 If there is error "TypeError: 'encoding' is an invalid keyword argument for this function", then you will need to change python in command above to python3.\
 \
 \
-Note this guide does NOT work on "Brand" accounts anymore. Only normal accounts.\
-How to get JSON file with only all youtube subscriptions:\
+How to get JSON or CSV file with only all youtube subscriptions:\
 1: be at youtube homepage, logged in.\
 2: click your account icon at top right.\
 3: click "Your data in YouTube"\
