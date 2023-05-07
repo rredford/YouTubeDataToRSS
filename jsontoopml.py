@@ -7,7 +7,7 @@
 #
 #  1.0 initial version. 
 
-#!/usr/bin/python
+#!/usr/bin/python3
 
 import sys
 import os.path
